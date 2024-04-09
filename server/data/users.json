@@ -1,5 +1,13 @@
 [
-    {
-        "Name": "Rikke"
-    }
+  {
+    "Name": "Rikke"
+  },
+  {
+    "email": "freddan@hotmail.com",
+    "password": {}
+  },
+  {
+    "email": "rikke@hotmail.com",
+    "password": {}
+  }
 ]
