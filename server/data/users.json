@@ -9,5 +9,13 @@
   {
     "email": "rikke@hotmail.com",
     "password": {}
+  },
+  {
+    "email": "test@hotmail.com",
+    "password": {}
+  },
+  {
+    "email": "testing@hotmail.com",
+    "password": "$2b$10$rCYhhCYtL6zo75v52ojU/u8uovRqbd19XKdOg9ZQPNa/.yFxJxbk2"
   }
 ]
