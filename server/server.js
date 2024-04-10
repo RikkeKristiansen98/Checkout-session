@@ -4,7 +4,7 @@ const cors = require("cors")
 
 const userRouter = require("./resources/users.router")
 const authRouter = require("./resources/auth.router")
-
+const stripeRouter = require("./resources/stripe.router")
 
 const app = express()
 
@@ -21,6 +21,7 @@ app.use(cookieSession({
 //Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/payments", stripeRouter);
 
 
 app.listen(3001, () => console.log("Server is running🐒"))
