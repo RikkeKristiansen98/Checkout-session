@@ -5,7 +5,7 @@ interface LoginProps {
   setUser: (user: IUser | null) => void;
 }
 
-const Login: React.FC<LoginProps> = ({ setUser }) => {
+const Login = ({ setUser }: LoginProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -30,14 +30,14 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
         setErrorMessage("");
       } else {
         setUser(null);
-        setErrorMessage("Wrong password/email, try again");
+        setErrorMessage("Fel email eller lösenord, forsök igen");
         setEmail("");
         setPassword("");
       }
     } catch (error) {
       console.error("Login error:", error);
       setUser(null);
-      setErrorMessage("Login failed, please try again later");
+      setErrorMessage("Kunne inte logga in");
     }
   };
 
@@ -51,7 +51,7 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
       />
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Lösenord"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />

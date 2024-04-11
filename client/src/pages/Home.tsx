@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import Login from "../components/Login";
 import Logout from "../components/Logout";
+import { IUser } from "../models/User";
+import { Link } from "react-router-dom"; // Importera Link från react-router-dom för att navigera till andra sidor
 
-interface User {
-  email: string;
-  // Add more user properties if needed
-}
-
-export const Home = () => {
-  const [user, setUser] = useState<User | null>(null);
+export const Home = () => { 
+  const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
     const authorize = async () => {
@@ -18,7 +15,7 @@ export const Home = () => {
         });
 
         if (response.status === 200) {
-          const userData = await response.json();
+          const userData = await response.json() as IUser;
           setUser(userData);
         } else {
           setUser(null);
@@ -40,6 +37,9 @@ export const Home = () => {
       ) : (
         <Login setUser={setUser} />
       )}
+     <Link to="/register">
+        <button>Registrera dig här</button>
+      </Link>
     </>
   );
 };

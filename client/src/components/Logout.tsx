@@ -1,4 +1,3 @@
-import React from "react";
 import { IUser } from "../models/User";
 
 
@@ -6,7 +5,7 @@ interface LogoutProps {
   setUser: (user: IUser | null) => void;
 }
 
-const Logout: React.FC<LogoutProps> = ({ setUser }) => {
+const Logout = ({ setUser }: LogoutProps) => {
   const logout = async () => {
     try {
       const response = await fetch("http://localhost:3001/api/auth/logout", {
