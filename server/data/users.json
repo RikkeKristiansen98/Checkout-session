@@ -21,5 +21,9 @@
   {
     "email": "fakemail@email.com",
     "password": "$2b$10$diw8KgIvQ9xrzVtIpSwsvuGcoD9XU7IX4vr3DeNzII4HsDOWrg7DO"
+  },
+  {
+    "email": "Random@random.com",
+    "password": "$2b$10$eGBMuSehRbFAOx.0ryOfqefldoAq./da3/qfgmswgtBTG4.DaxRve"
   }
 ]
