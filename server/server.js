@@ -1,6 +1,7 @@
 const express = require ("express")
 const cookieSession = require("cookie-session")
 const cors = require("cors")
+require("dotenv").config()
 
 const userRouter = require("./resources/users.router")
 const authRouter = require("./resources/auth.router")

@@ -1,9 +1,11 @@
+
+const Stripe = require('stripe');
 const initStripe = () => {
     const apiKey = process.env.STRIPE_KEY;
 
     if (!apiKey) {
         console.error("Stripe API key is not defined. Make sure to set the environment variable STRIPE_KEY.");
-        return null; // Returnera null om apiKey inte är definierad
+        return null; 
     }
 
     return new Stripe(apiKey, {
