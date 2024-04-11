@@ -1,7 +1,7 @@
 export const Payment = () => {
 
 const handlePayment = async () => {
-    const response = await fetch("http://localhost:3001/payments/create-checkout-session",{
+    const response = await fetch("http://localhost:3001/payments/create-checkout-session", {
       method: "POST"
     })
   const data = await response.json()
