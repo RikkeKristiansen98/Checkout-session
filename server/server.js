@@ -24,5 +24,4 @@ app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/payments", stripeRouter);
 
-
 app.listen(3001, () => console.log("Server is running🐒"))
