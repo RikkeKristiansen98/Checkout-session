@@ -1,5 +1,7 @@
 const initStripe = require("../stripe")
 const fs = require("fs").promises
+require("dotenv").config();
+
 
 const createCheckoutSession = async (req, res) => {
 
@@ -49,5 +51,7 @@ const verifySession = async(req, res) => {
 
       res.status(200).json({ verified: true })
 }
+
+
 }
 module.exports = { createCheckoutSession, verifySession }
