@@ -5,7 +5,6 @@ import { Layout } from './pages/Layout';
 import { Confirmation } from './components/Confirmation';
 import { Payment } from './components/Payment';
 import Register from './components/Register';
-import Shop from './pages/Shop';
 
 export const Router = createBrowserRouter(
     [
@@ -29,10 +28,6 @@ export const Router = createBrowserRouter(
             {
               path: '/Register',
               element: <Register />
-            },
-            {
-              path: '/Shop',
-              element: <Shop />
             }
           ]
         }

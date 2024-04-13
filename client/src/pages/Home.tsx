@@ -3,6 +3,7 @@ import Login from "../components/Login";
 import Logout from "../components/Logout";
 import { IUser } from "../models/User";
 import { Link } from "react-router-dom"; // Importera Link från react-router-dom för att navigera till andra sidor
+import Products from "../components/Products";
 
 export const Home = () => { 
   const [user, setUser] = useState<IUser | null>(null);
@@ -32,6 +33,7 @@ export const Home = () => {
   return (
     <>
       <h1>HOME</h1>
+      <Products />
       {user ? (
         <Logout setUser={setUser} />
       ) : (

@@ -6,7 +6,7 @@ require("dotenv").config()
 const userRouter = require("./resources/users.router")
 const authRouter = require("./resources/auth.router")
 const stripeRouter = require("./resources/stripe.router")
-
+const productsRouter = require("./resources/products.router") 
 const app = express()
 
 app.use(cors({
@@ -23,5 +23,6 @@ app.use(cookieSession({
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/payments", stripeRouter);
+app.use("/api/products", productsRouter);
 
 app.listen(3001, () => console.log("Server is running🐒"))
