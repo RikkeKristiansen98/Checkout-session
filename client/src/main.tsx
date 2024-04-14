@@ -4,7 +4,7 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { Layout } from './pages/Layout.tsx'
 import CartProvider from './context/CartContext.tsx'
-import { router } from './Router.tsx'
+import { Router } from './Router.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -12,6 +12,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
      <CartProvider>
      <Layout />
      </CartProvider>
-    <RouterProvider router={router} />
+    <RouterProvider router={Router} />
   </React.StrictMode>,
 )
