@@ -1,44 +1,43 @@
 import { useState } from "react";
 import { IUser } from "../models/User";
+import { Link } from "react-router-dom";
 
-
-const Register = () => { 
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [registerStatus, setRegisterStatus] = useState("");
 
   const handleRegister = async () => {
     const newUser: IUser = {
       email,
-      password
+      password,
     };
-  
+
     try {
       const response = await fetch("http://localhost:3001/api/auth/register", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(newUser),
       });
-  
+
       if (response.ok) {
-        console.log("User registered successfully!");
-        // Återställ formuläret efter lyckad registrering
+        setRegisterStatus("success");
         setEmail("");
         setPassword("");
       } else {
-        console.error("Registration failed!");
-        // Hantera felregistrering här
+        setRegisterStatus("error");
       }
     } catch (error) {
       console.error("Error registering user:", error);
-      // Hantera fel vid HTTP-anrop här
+      setRegisterStatus("error");
     }
-  };  
+  };
 
   return (
     <div>
-      <h2>Register</h2>
+      <h2>Registrera</h2>
       <input
         type="email"
         placeholder="Email"
@@ -52,8 +51,18 @@ const Register = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleRegister}>Registrera dig</button>
+      {registerStatus === "success" && (
+        <p style={{ color: "green" }}>Registreringen lyckades.</p>
+      )}
+      {registerStatus === "error" && (
+        <p style={{ color: "red" }}>Registreringen misslyckades. Försök igen.</p>
+      )}
+      <Link to="/">
+        <button>Tillbaka</button>
+      </Link>
     </div>
   );
 };
 
 export default Register;
+

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Login from "../components/Login";
 import Logout from "../components/Logout";
 import { IUser } from "../models/User";
-import { Link } from "react-router-dom"; 
 import Products from "../components/Products";
+import { Link } from "react-router-dom";
 
 export const Home = () => { 
   const [user, setUser] = useState<IUser | null>(null);
@@ -32,16 +32,17 @@ export const Home = () => {
 
   return (
     <>
-      <h1>HOME</h1>
-      <Products />
       {user ? (
         <Logout setUser={setUser} />
       ) : (
-        <Login setUser={setUser} />
-      )}
-     <Link to="/register">
-        <button>Registrera dig här</button>
-      </Link>
+        <Login setUser={setUser} /> 
+      )}<Link to="/register">
+      <button>Registrera dig</button>
+    </Link>
+    <Link to="/cart">
+      <button>Varukorg</button>
+    </Link>
+          <Products />
     </>
   );
 };
