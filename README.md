@@ -11,26 +11,17 @@ Requirements
  Payment Validation: The order is only saved if payment through Stripe has been completed.
 
 Additional
- Discount Code: Ability to enter a discount code to receive a discount on purchases, through Stripe.
+ Discount Code: Ability to enter a discount code to receive a discount on purchases, through Stripe. (Discount code: LANSERING2024 works on product Kentucky Lädergrimma)
  Order History: Logged-in users should be able to view their previously placed orders. (Not done yet)
  Address and Pickup Point: Users must fill in their address and choose a pickup point before payment, integrated with PostNord API. (Not done yet)
 
-
-Before You Start
-Make sure you have node.js installed
-Register your test account at Stripe and save your API-key
-Create your test shop and your testproducts in Stripe
-
-.env server:
-
-STRIPE_KEY="YOUR_API_KEY"
-
-
 To build and run the project, follow these steps:
 
+Before You Start: Make sure you have node.js installed
 Clone this repository from Github
 New Terminal for Client: First cd client then run npm i and npm run dev
 New Terminal for Server: Firstcd server Run npm i and node server
+.env server: STRIPE_KEY="YOUR_API_KEY"
 Make sure your express server is running
 Navigate to http://localhost:5173/ in your browser
 
