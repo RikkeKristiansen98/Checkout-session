@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export const Confirmation = () => {
     const [verified, setVerified] = useState(false)
@@ -38,6 +39,9 @@ export const Confirmation = () => {
     return (
         <div>
             <h3>{verified && !isLoading ? "TACK FÖR DITT KÖP!" : "LOADING..."}</h3>
+            <Link to="/">
+        <button>Tillbaka</button>
+      </Link>
         </div>
     )
 }

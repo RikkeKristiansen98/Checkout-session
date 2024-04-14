@@ -37,7 +37,6 @@ import {
   const CartContext = createContext<ICartContext>(initialValues);
   
   export const useCart = () => useContext(CartContext);
-  
   export const CartProvider = ({ children }: PropsWithChildren) => {
     const [cart, setCart] = useState<ICartItem[]>(() => {
       const lsData = localStorage.getItem("cart");
@@ -90,9 +89,8 @@ import {
   
     return (
       <CartContext.Provider
-        value={{ cart, addToCart, removeFromCart, clearCart }}
-      >
-        {children}
+        value={{ cart, addToCart, removeFromCart, clearCart }}>
+          {children}
       </CartContext.Provider>
     );
   };

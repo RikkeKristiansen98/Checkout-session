@@ -1,6 +1,5 @@
 import { IUser } from "../models/User";
 
-
 interface LogoutProps {
   setUser: (user: IUser | null) => void;
 }
@@ -20,7 +19,6 @@ const Logout = ({ setUser }: LogoutProps) => {
       console.error("Logout error:", error);
     }
   };
-
   return <button onClick={logout}>Logout</button>;
 };
 

@@ -1,21 +1,5 @@
 [
   {
-    "email": "testing@hotmail.com",
-    "password": "$2b$10$rCYhhCYtL6zo75v52ojU/u8uovRqbd19XKdOg9ZQPNa/.yFxJxbk2"
-  },
-  {
-    "email": "fakemail@email.com",
-    "password": "$2b$10$diw8KgIvQ9xrzVtIpSwsvuGcoD9XU7IX4vr3DeNzII4HsDOWrg7DO"
-  },
-  {
-    "email": "Random@random.com",
-    "password": "$2b$10$eGBMuSehRbFAOx.0ryOfqefldoAq./da3/qfgmswgtBTG4.DaxRve"
-  },
-  {
-    "email": "fail@email.com",
-    "password": "$2b$10$pd4cAy3EoFFw5PHajXy.DOFtgqqcWqMIXb5YinS5gM05e8lbTa1E6"
-  },
-  {
     "email": "email@email.com",
     "password": "$2b$10$4AzfwPV9XE71SNXaVPVq..lm3MmFj4fGpeQemIAO74zsofUpE89TW",
     "stripeId": "cus_PvFKzGdj9T96j2"

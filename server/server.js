@@ -1,12 +1,12 @@
 const express = require ("express")
 const cookieSession = require("cookie-session")
 const cors = require("cors")
-require("dotenv").config()
 
 const userRouter = require("./resources/users.router")
 const authRouter = require("./resources/auth.router")
 const stripeRouter = require("./resources/stripe.router")
 const productsRouter = require("./resources/products.router") 
+
 const app = express()
 
 app.use(cors({
@@ -20,7 +20,6 @@ app.use(cookieSession({
     maxAge: 1000 * 60 * 60 * 24,
 }))
 
-//Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/payments", stripeRouter);
