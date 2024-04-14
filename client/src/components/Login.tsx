@@ -51,14 +51,14 @@ const Login = ({ setUser }: LoginProps) => {
         setErrorMessage("");
       } else {
         setUser(null);
-        setErrorMessage("Fel email eller lösenord, forsök igen");
+        setErrorMessage("Fel email eller lösenord, forsök igen.");
         setEmail("");
         setPassword("");
       }
     } catch (error) {
       console.error("Login error:", error);
       setUser(null);
-      setErrorMessage("Kunne inte logga in");
+      setErrorMessage("Kunne inte logga in.");
     }
   };
 
@@ -76,7 +76,7 @@ const Login = ({ setUser }: LoginProps) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={login}>Log In</button>
+      <button onClick={login}>Logga in</button>
       {errorMessage && <p>{errorMessage}</p>}
     </div>
   );

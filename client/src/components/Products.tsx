@@ -52,7 +52,7 @@ const Products = () => {
             <p>{(product.default_price.unit_amount / 100).toFixed(2)} SEK</p>
             <p>{product.description}</p>
             <div>
-              <button onClick={() => handleAddToCart(product)}>Köp</button>
+              <button onClick={() => handleAddToCart(product)}>Lägg i varukorg</button>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Products = () => {
   centered
 >
   <Modal.Body style={{display: 'flex', alignItems: 'center'}}>
-    <p>Varan har lagts till i din kundvagn.</p>
+    <p>Varan har lagts till i din varukorg.</p>
   </Modal.Body>
   <Modal.Footer>
     <Button variant="secondary" onClick={() => setShowModal(false)}>
@@ -71,8 +71,6 @@ const Products = () => {
     </Button>
   </Modal.Footer>
 </Modal>
-
-
     </div>
   );
 };

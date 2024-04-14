@@ -5,7 +5,6 @@ const createCheckoutSession = async (req, res) => {
   const cart = req.body;
   const stripe = initStripe();
 
-  // en array av line_items baserat på datan från klienten
   const lineItems = cart.map((item) => {
     return {
       price: item.product.default_price.id,
