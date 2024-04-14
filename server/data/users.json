@@ -24,5 +24,20 @@
     "email": "testA@email.com",
     "password": "$2b$10$AaZFZinkGnKMQkBjixdxdeOgGv.rir7ZmL/7Q4lBQAO5lvpXAOie.",
     "stripeId": "cus_PvFc398EwKR0n6"
+  },
+  {
+    "email": "fakem@mail.com",
+    "password": "$2b$10$ChUy6twzxQD.aF/ZkS86W.dBvtGc1IOi8AzCtkW1uki9cvUkgLNzS",
+    "stripeId": "cus_PvKRE3fwY1XQPe"
+  },
+  {
+    "email": "random@email.com",
+    "password": "$2b$10$9WCUOiloz82AX3ngRFKvGOt74oYYxK/v22PfDLu.760sjD3f0j/RG",
+    "stripeId": "cus_PvKU7ePiisAxFZ"
+  },
+  {
+    "email": "rikke@rikke.com",
+    "password": "$2b$10$YnjllFeEJI7R4l2p/zvb2.TViMD0pBjjNpHpq.QZ29eFy1xbRdN3K",
+    "stripeId": "cus_PvKaRhWe7VV2h4"
   }
 ]
