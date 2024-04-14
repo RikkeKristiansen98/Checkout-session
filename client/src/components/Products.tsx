@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useCart } from '../context/CartContext';
-import { IProduct } from '../models/Products';
+import { IProduct, useCart } from '../context/CartContext';
+import { Cart } from '../pages/Cart';
 
 const Products = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -45,6 +45,7 @@ const Products = () => {
               <button onClick={() => addToCart(product)}>Köp</button>
             </div>
           </div>
+          <Cart />
         </div>
       ))}
     </div>
