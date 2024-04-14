@@ -11,7 +11,7 @@ Requirements
  Payment Validation: The order is only saved if payment through Stripe has been completed.
 
 Additional
- Discount Code: Ability to enter a discount code to receive a discount on purchases, through Stripe. (Discount code: LANSERING2024 works on product Kentucky Lädergrimma)
+ Discount Code: Ability to enter a discount code to receive a discount on purchases, through Stripe. 
  Order History: Logged-in users should be able to view their previously placed orders. (Not done yet)
  Address and Pickup Point: Users must fill in their address and choose a pickup point before payment, integrated with PostNord API. (Not done yet)
 
