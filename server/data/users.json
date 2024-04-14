@@ -39,5 +39,10 @@
     "email": "rikke@rikke.com",
     "password": "$2b$10$YnjllFeEJI7R4l2p/zvb2.TViMD0pBjjNpHpq.QZ29eFy1xbRdN3K",
     "stripeId": "cus_PvKaRhWe7VV2h4"
+  },
+  {
+    "email": "rikke.kristiansen@hotmail.com",
+    "password": "$2b$10$fvXoSsC/AOrvwg6bxxn8TuJMXDIGQpKDPHVgtcuis7NQlZk6VQLuO",
+    "stripeId": "cus_PvOr4zYdpi0a9l"
   }
 ]
