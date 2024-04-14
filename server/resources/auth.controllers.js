@@ -31,7 +31,7 @@ const newUser = {
 }
 users.push(newUser)
 
-await fs.writeFile("./users.json", JSON.stringify(users, null, 2))
+await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2))
 res.status(201).json(newUser)
 }
 
@@ -59,9 +59,9 @@ const logout = (req, res) => {
 
 const authorize = (req, res) => {
     if (!req.session.user) {
-        return res.status(401).json("You are not logged in")
+        return res.status(401).json("You are not logged in");
     }
-    res.status(200).json(req.session.user.email)
-}
+    res.status(200).json(req.session.user.password)
+};
 
-module.exports = { register, login, logout, authorize }
+module.exports = {register, login, logout, authorize}
