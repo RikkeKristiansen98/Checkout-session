@@ -1,5 +1,5 @@
-/*import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
-import { IProduct } from "../components/Products";
+import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
+import { IProduct } from "../models/Products"
 
 interface ICartItem {
     product: IProduct,
@@ -50,4 +50,4 @@ const CartProvider = ({children}: PropsWithChildren) => {
     )
 }
 
-export default CartProvider */
+export default CartProvider 

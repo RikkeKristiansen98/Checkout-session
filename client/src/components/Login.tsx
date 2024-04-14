@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IUser } from "../models/User";
 
 interface LoginProps {
@@ -10,6 +10,27 @@ const Login = ({ setUser }: LoginProps) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  useEffect(() => {
+    const authorize = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/auth/authorize", {
+          credentials: "include"
+        });
+
+        if (response.status === 200) {
+          const userData = await response.json() as IUser;
+          setUser(userData);
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.error("Error authorizing user:", error);
+        setUser(null);
+      }
+    };
+
+    authorize();
+  }, []);
   const login = async () => {
     try {
       const response = await fetch("http://localhost:3001/api/auth/login", {
