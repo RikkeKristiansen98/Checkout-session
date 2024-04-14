@@ -4,8 +4,8 @@ import { Notfound } from './pages/Notfound';
 import { Layout } from './pages/Layout';
 import { Confirmation } from './components/Confirmation';
 import Register from './components/Register';
-import Payment from './components/Payment';
-import Cart from './pages/Cart';
+import { Payment } from './components/Payment';
+import { Cart } from './pages/Cart';
 
 export const Router = createBrowserRouter(
     [

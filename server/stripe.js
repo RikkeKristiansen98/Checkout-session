@@ -1,5 +1,6 @@
-
 const Stripe = require('stripe');
+require('dotenv').config();
+
 const initStripe = () => {
     const apiKey = process.env.STRIPE_KEY;
 

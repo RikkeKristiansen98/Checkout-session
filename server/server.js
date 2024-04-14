@@ -15,6 +15,7 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(cookieSession({
+    name: "session",
     secret: "r2kr3j",
     maxAge: 1000 * 60 * 60 * 24,
 }))

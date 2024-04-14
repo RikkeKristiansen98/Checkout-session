@@ -1,25 +1,39 @@
-import Payment from "../components/Payment"
-import { useCart } from "../context/CartContext"
+import { Payment } from "../components/Payment";
+import { useCart } from "../context/CartContext";
 
-const Cart = () => {
+export const Cart = () => {
+  const { cart, removeFromCart } = useCart();
 
-const {cart} = useCart()
-    return (
-        <>
-        <h3>Kundvagn</h3>
-        <div>
-            {cart.map((item, index) => (
-                <div key={index}>
-                    <h3>{item.product.name}</h3>
-                        <img src={item.product.images[0]} alt={item.product.name} />
-                    <p>Price: {item.product.default_price.unit_amount / 100} SEK</p>
-                    <p>Quantity: {item.quantity}</p>
+  return (
+    <>
+      <div>
+        <ul>
+          {cart.map((product) => (
+            <div key={product.product.id}>
+              <h3>{product.product.name}</h3>
+              <div>
+                <img
+                  src={product.product.images[0]}
+                  alt={product.product.name}
+                  style={{ width: "80px" }}
+                />
+                <div>
+                  <p>
+                    {product.quantity} st -{" "}
+                    {product.product.default_price.unit_amount / 100} SEK
+                  </p>
+                  <button
+                    onClick={() => removeFromCart(product.product)}
+                  >Ta bort produkt
+                  </button>
                 </div>
-            ))}
-            <Payment/>
-        </div>
-        </>
-    )
-}
+              </div>
+            </div>
+          ))}
+        </ul>
 
-export default Cart
+        <Payment />
+      </div>
+    </>
+  );
+};

@@ -1,53 +1,98 @@
-import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
-import { IProduct } from "../models/Products"
-
-interface ICartItem {
-    product: IProduct,
-    quantity: number
-}
-
-interface ICartContext {
-    cart: ICartItem[],
-    addToCart: (product: IProduct) => void
-}
-
-const initialValues = {
+import {
+    PropsWithChildren,
+    createContext,
+    useContext,
+    useEffect,
+    useState,
+  } from "react";
+  
+  export interface IProduct {
+    id: string;
+    name: string;
+    description: string;
+    images: string[];
+    default_price: {
+      unit_amount: number;
+    };
+  }
+  
+  interface ICartItem {
+    product: IProduct;
+    quantity: number;
+  }  
+  interface ICartContext {
+    cart: ICartItem[];
+    addToCart: (product: IProduct) => void;
+    removeFromCart: (product: IProduct) => void;
+    clearCart: () => void;
+  }
+  
+  const initialValues = {
     cart: [],
-    addToCart: () => {}
-}
-
-const CartContext = createContext<ICartContext>(initialValues)
-export const useCart = () => useContext(CartContext)
-
-const CartProvider = ({children}: PropsWithChildren) => {
+    addToCart: () => {},
+    removeFromCart: () => {},
+    clearCart: () => {},
+  };
+  
+  const CartContext = createContext<ICartContext>(initialValues);
+  
+  export const useCart = () => useContext(CartContext);
+  
+  export const CartProvider = ({ children }: PropsWithChildren) => {
     const [cart, setCart] = useState<ICartItem[]>(() => {
-        const lsData = localStorage.getItem("cart")
-        return lsData ? JSON.parse(lsData) : []
-    })
-
+      const lsData = localStorage.getItem("cart");
+      return lsData ? JSON.parse(lsData) : [];
+    });
+  
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart))
-    }, [cart])
-
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+  
+    const clearCart = () => {
+      setCart([]);
+    };
+  
     const addToCart = (product: IProduct) => {
-        const cloneCart = [...cart]
-
-        const productAlreadyExists = cloneCart.find(item => item.product.id === product.id)
-
-        if (productAlreadyExists) {
-            productAlreadyExists.quantity++
-            setCart(cloneCart)
+      const clonedCart = [...cart];
+  
+      const existingProduct = clonedCart.find(
+        (item) => item.product.id === product.id
+      );
+  
+      if (existingProduct) {
+        existingProduct.quantity++;
+        setCart(clonedCart);
+      } else {
+        setCart([...clonedCart, { product, quantity: 1 }]);
+      }
+    };
+  
+    const removeFromCart = (product: IProduct) => {
+      const clonedCart = [...cart];
+  
+      const existingProduct = clonedCart.find(
+        (item) => item.product.id === product.id
+      );
+  
+      if (existingProduct) {
+        if (existingProduct.quantity > 1) {
+          existingProduct.quantity--;
         } else {
-            setCart([...cart, {product, quantity: 1}])
+          const index = clonedCart.findIndex(
+            (item) => item.product.id === product.id
+          );
+          clonedCart.splice(index, 1);
         }
-    }
-
-
+  
+        setCart(clonedCart);
+      }
+    };
+  
     return (
-        <CartContext.Provider value={{cart, addToCart}}>
-            {children}
-        </CartContext.Provider>
-    )
-}
-
-export default CartProvider 
+      <CartContext.Provider
+        value={{ cart, addToCart, removeFromCart, clearCart }}
+      >
+        {children}
+      </CartContext.Provider>
+    );
+  };
